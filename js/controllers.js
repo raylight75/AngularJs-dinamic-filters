@@ -4,10 +4,10 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     function ($scope, Phone) {
-        // $http.get('phones/phones.json').success(function(data) {
-        //   $scope.phones = data;
-        //   console.log($scope.phones);
-        // });
+        /*$http.get('phones/phones.json').success(function (data) {
+            $scope.phones = data;
+            console.log($scope.phones);
+        });*/
         $scope.phones = Phone.query();
         $scope.nameIncludes = [];
         console.log($scope.phones);
