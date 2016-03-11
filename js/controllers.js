@@ -10,8 +10,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
         });*/
         $scope.phones = Phone.query();
         $scope.nameIncludes = [];
-        console.log($scope.phones);
-
         $scope.includeName = function (name) {
             var i = $.inArray(name, $scope.nameIncludes);
             if (i > -1) {
