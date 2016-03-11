@@ -10,6 +10,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
         });*/
         $scope.phones = Phone.query();
         $scope.nameIncludes = [];
+
         $scope.includeName = function (name) {
             var i = $.inArray(name, $scope.nameIncludes);
             if (i > -1) {
@@ -35,7 +36,6 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
         $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
             $scope.mainImageUrl = phone.images[0];
         });
-
         $scope.setImage = function (imageUrl) {
             $scope.mainImageUrl = imageUrl;
         };
