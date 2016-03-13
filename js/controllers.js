@@ -5,9 +5,9 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     function ($scope, Phone) {
         /*$http.get('phones/phones.json').success(function (data) {
-            $scope.phones = data;
-            console.log($scope.phones);
-        });*/
+         $scope.phones = data;
+         console.log($scope.phones);
+         });*/
         $scope.phones = Phone.query();
         $scope.nameIncludes = [];
 
@@ -24,7 +24,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
         $scope.nameFilter = function (phones) {
             if ($scope.nameIncludes.length > 0) {
                 if ($.inArray(phones.slug, $scope.nameIncludes) < 0)
-                    return;
+                    if ($.inArray(phones.carrier, $scope.nameIncludes) < 0)
+                        return;
             }
             return phones;
         }
