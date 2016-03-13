@@ -22,7 +22,7 @@
             <!--Body content-->
             <ul class="phones">
                 <div class="span"> </br></div>
-                <li dir-paginate="phone in phones | filter:nameFilter | orderBy:orderProp | itemsPerPage:4"
+                <li dir-paginate="phone in phones | filter:nameFilter | filter:query | orderBy:orderProp | itemsPerPage:4"
                     class="thumbnail">
                     <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
                     <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
